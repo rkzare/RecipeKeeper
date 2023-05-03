@@ -11,3 +11,5 @@ type Recipe struct {
 	Directions  map[int]string    `json:"Directions"`
 	Tags        []string          `json:"Tags"`
 }
+
+var AllRecipes []Recipe
