@@ -4,7 +4,7 @@ type Recipe struct {
 	Id          string            `json:"Id"`
 	RecipeName  string            `json:"Recipe Name"`
 	Source      string            `json:"Source"`
-	PrepTime    string            `json:"Prep Time"`
+	PrepTime    string            `json:"Preperation Time"`
 	CookTime    string            `json:"Cook Time"`
 	ServingSize int               `json:"Serving Size"`
 	Ingredients map[string]string `json:"Ingredients"`

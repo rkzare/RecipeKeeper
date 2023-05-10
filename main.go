@@ -11,8 +11,12 @@ import (
 func main() {
 
 	data.FetchAllRecipes()
-	http.HandleFunc("/", handlers.HomePage)
+	server := http.NewServeMux()
+	style := http.FileServer(http.Dir("frontend/css"))
+	server.Handle("/frontend/css/", http.StripPrefix("/frontend/css/", style))
+
+	server.HandleFunc("/", handlers.HomePage)
 	fmt.Println(data.AllRecipes)
-	log.Fatal(http.ListenAndServe(":8000", nil))
+	log.Fatal(http.ListenAndServe(":8000", server))
 
 }

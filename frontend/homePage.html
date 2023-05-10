@@ -1,1 +1,35 @@
-{{.}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="/frontend/css/homePageStyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Recipe Keeper</title>
+</head>
+<body>
+    <header>
+       <h1 class="title">Recipe Keeper</h1>
+    </header>
+    <main>
+        {{range .}}
+        <div>
+           <header class="recipe"><h2>{{.RecipeName}}</h2></header> 
+           <h3 class="PrepT">Prep Time</h3>
+           <p class="PrepB">{{.PrepTime}}</p> 
+           <h3 class="CookT">Cook Time</h3>
+           <p class="CookB">{{.CookTime}}</p>
+           <h3 class="ServingT">Serving Size</h3>
+           <p class="ServingB">{{.ServingSize}}</p>
+           <footer class="Tag">|{{range .Tags}} {{.}} | {{end}}</footer>
+        </div>
+        {{end}}
+    </main>
+    <footer>
+        (c)2023
+    </footer>
+
+
+    
+</body>
+</html>
