@@ -27,6 +27,7 @@ body {
     grid-template-rows: fit-content 1fr fit-content;
 }
 
+
 .title{
     grid-area: header;
     width: 100%;
@@ -42,7 +43,7 @@ main {
     width:100%;
     gap: 15px;
     justify-content: center;
-    background: url("/static/css/avocado-1838785_1920.jpg") no-repeat center center fixed;
+    background: url("avocado-1838785_1920.jpg") no-repeat center center fixed;
     -webkit-background-size: 100%; 
     -moz-background-size: 100%; 
     -o-background-size: 100%; 

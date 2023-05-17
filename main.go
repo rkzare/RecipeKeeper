@@ -16,6 +16,8 @@ func main() {
 	server.Handle("/frontend/css/", http.StripPrefix("/frontend/css/", style))
 
 	server.HandleFunc("/", handlers.HomePage)
+	server.HandleFunc("/recipe/", handlers.RecipePage)
+
 	fmt.Println(data.AllRecipes)
 	log.Fatal(http.ListenAndServe(":8000", server))
 

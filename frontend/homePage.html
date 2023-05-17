@@ -8,21 +8,23 @@
     <title>My Recipe Keeper</title>
 </head>
 <body>
-    <header>
-       <h1 class="title">Recipe Keeper</h1>
+    <header class="title">
+       <h1>Recipe Keeper</h1>
     </header>
     <main>
         {{range .}}
-        <div>
-           <header class="recipe"><h2>{{.RecipeName}}</h2></header> 
-           <h3 class="PrepT">Prep Time</h3>
-           <p class="PrepB">{{.PrepTime}}</p> 
-           <h3 class="CookT">Cook Time</h3>
-           <p class="CookB">{{.CookTime}}</p>
-           <h3 class="ServingT">Serving Size</h3>
-           <p class="ServingB">{{.ServingSize}}</p>
-           <footer class="Tag">|{{range .Tags}} {{.}} | {{end}}</footer>
-        </div>
+        <form method="POST" action="/recipe/{{.Id}}" class="cardform">
+            <button type="submit" name="recipe" value="{{.Id}}" class="card">
+                <header class="recipe"><h1>{{.RecipeName}}</h1></header> 
+                <h3 class="PrepT">Prep Time</h3>
+                <p class="PrepB">{{.PrepTime}}</p> 
+                <h3 class="CookT">Cook Time</h3>
+                <p class="CookB">{{.CookTime}}</p>
+                <h3 class="ServingT">Serving Size</h3>
+                <p class="ServingB">{{.ServingSize}}</p>
+                <footer class="tag">|{{range .Tags}} {{.}} | {{end}}</footer>
+            </button>
+        </form>
         {{end}}
     </main>
     <footer>
